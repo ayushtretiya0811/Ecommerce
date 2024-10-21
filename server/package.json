@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
    
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js --watch server.js"
   },
   "author": "",
   "license": "ISC",
