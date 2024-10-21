@@ -20,6 +20,7 @@ connectDB();
 app.listen(1000, () => console.log('server is running on port 5000'))
 console.log(process.env.PORT)
 app.use(express.static('uploads'));
+app.use('/data', console.log('data'));
 app.use('/api/user', authRouter)
 app.use('/api/admin', adminRouter);
 app.use('/api/product', productRoutes);
