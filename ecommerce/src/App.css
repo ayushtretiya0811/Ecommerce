@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+.nav-link{
+  position: relative;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding-bottom: 1px;
+  
+  }
+     .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    /* padding-bottom: 4px; */
+    background-color: red;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .HiBars3{
+    display: none !important;
+  }
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    /* padding-bottom: 3px; */
+  }
+  header{
+    background-color: var(--back-color);
+  }
+  
+  .footer{
+    background-color: var(--back-color);
+  left: 0;
+  bottom: 0;
+  /* width: 100vh; */
+  /* position: fixed; */
+  
+   
+  }
+  .input-wrapper{
+    color: red!important;
+  }
+  .active{
+    width: 100vw;
+    height: 100vh;
+    flex: none ;
+    position: fixed;
+    top: 0;
+    left: 0;
+  /* gap: 30px; */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+  }
+  .active ul{
+    display: flex ;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    /* top: 50% !important;
+     */
+     margin-top: 40px;
+  /* margin-inline:  auto; */
+  }
+
+  
+
+
+
+
+
+  @media (max-width: 634px) {
+    .itm{
+      display: none;
+    }
+    .HiBars3{
+      display: block !important;
+    }
+     }
+    
+    
+     option {
+      padding: 10px;
+      padding-top: 20px; /* Adjust the padding as needed */
+  }
+
+
+  .main-text{
+    font-family: "Underdog", system-ui;
+    /* font-family: "Gochi Hand", cursive; */
+    font-size: clamp(1.5rem, 6vw, 4em) !important;
+    line-height: 1.2 !important;
+    max-width: 70% !important;
+  }
+
+
+  .card1 {
+    display: block;
+    position: relative;
+
+    background-color: #f2f8f9;
+    border-radius: 4px;
+
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    
+  
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: -16px;
+      right: -16px;
+      background: #00838d;
+      height: 32px;
+      width: 32px;
+      border-radius: 32px;
+      transform: scale(1);
+      transform-origin: 50% 50%;
+      transition: transform 0.25s ease-out;
+    }
+  
+    &:hover:before {
+      transform: scale(28);
+    }
+  }
+
+  .content{
+    display: hidden;
+    transition-delay: 0.5s;
+    animation-delay: 1s;
+  
+  }
+  .card1:hover .content{
+    display: block;
+   
+  }
+
+  .sc {
+    display: flex;
+    animation: scroll 15s linear infinite;
+    white-space: nowrap;
+    /* Add this to hide the overflow */
+    overflow: hidden; 
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Start from the original position */
+    }
+    100% {
+        transform: translateX(-50%); /* Move left by half the width of the content */
+    }
+}
+
+.banner  {
+  background-image: url('https://t4.ftcdn.net/jpg/06/41/86/93/360_F_641869325_Y5VvhLoAcfWCM5JBVcyNTPL4f2J26NHF.jpg');
+  background-position:  center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
