@@ -17,8 +17,8 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 
 connectDB();
-app.listen(process.env.PORT, () => console.log('server is running on port 5000'))
-
+app.listen(1000, () => console.log('server is running on port 5000'))
+console.log(process.env.PORT)
 app.use(express.static('uploads'));
 app.use('/api/user', authRouter)
 app.use('/api/admin', adminRouter);
