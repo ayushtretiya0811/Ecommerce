@@ -13,14 +13,18 @@ import orderRoutes from './Routes/orderRoutes.js'
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 
 connectDB();
 app.listen(1000, () => console.log('server is running on port 5000'))
 console.log(process.env.PORT)
 app.use(express.static('uploads'));
-
+app.use(cors({
+    origin: '*', // Adjust this to your frontend URL for better security
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use('/api/user', authRouter)
 app.use('/api/admin', adminRouter);
 app.use('/api/product', productRoutes);
