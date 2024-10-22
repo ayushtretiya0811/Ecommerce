@@ -11,8 +11,9 @@ function SingleProduct() {
   const { token } = useAuth();
   const productData = JSON.parse(localStorage.getItem("product"));
   const [image, setImage] = useState(
-    `http://localhost:1000/${productData?.images[0]}`
+    `${import.meta.env.VITE_REACT_APP_API}/${productData?.images[0]}`
   );
+
   const [selectedSize, setSelectedSize] = useState(
     productData?.sizes?.[0]?.size
   );
@@ -59,10 +60,10 @@ function SingleProduct() {
                       alt="Preview thumbnail"
                       className="aspect-[5/6] object-cover"
                       height={120}
-                      src={`http://localhost:1000/${image}`}
-                      width={100}
+                      src={`${import.meta.env.VITE_REACT_APP_API}/${image}`}
+                      width={100} 
                       onClick={() =>
-                        onclickImage(`http://localhost:1000/${image}`)
+                        onclickImage(`${import.meta.env.VITE_REACT_APP_API}/${image}`)
                       }
                     />
                     <span className="sr-only">View Image 1</span>

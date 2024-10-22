@@ -73,7 +73,8 @@ AddToCart(id , size , quantity)
       <div className="p-0">
         <div className=" md:h-[400px]  relative overflow-hidden">
           <img
-          src={`http://localhost:1000/${item.images[0]}`}
+          // src={`http://localhost:1000/${item.images[0]}`}
+          src={`${import.meta.env.VITE_REACT_APP_API}/${item.images[0]}`}
             alt="Product Image"
         
             className="transition-transform duration-300 group-hover:scale-105 object-cover w-full h-full" 
