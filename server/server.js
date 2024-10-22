@@ -25,6 +25,7 @@ app.use(cors({
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/user', authRouter)
 app.use('/api/admin', adminRouter);
 app.use('/api/product', productRoutes);
