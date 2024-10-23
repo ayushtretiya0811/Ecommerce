@@ -155,7 +155,7 @@ function Cart() {
                         alt="Product Image"
                         className="rounded-md object-cover"
                         height={80}
-                        src={`http://localhost:1000/${item?.productId?.images[0]}`}
+                        src={`${import.meta.env.VITE_REACT_APP_API}/${item?.productId?.images[0]}`}
                         style={{
                           aspectRatio: "80/80",
                           objectFit: "cover",
